@@ -25,7 +25,8 @@
 	height: 100%;
     background-color: green;
     position: absolute;
-    display: inline-flex;
+	display: inline-flex;
+	
 }
 .fail{
 	height: 100%;
@@ -73,4 +74,21 @@
 }
 .selected{
 	background-color: #ABD9E4;
+}
+@media only screen and (max-width:768px){
+	.pass{
+		display: flex;
+		flex-direction: row;
+		position:intial;
+		height:50px;
+		margin: 0px 10px;
+	}
+	.fail{
+		display: flex;
+		flex-direction: row;
+		position:intial;
+		height:50px;
+		margin: 0px 10px;
+	}
+	
 }

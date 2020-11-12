@@ -23,11 +23,12 @@ class Quiz extends React.PureComponent{
 	    }
 		this.loadQuestionsFromServer = this.loadQuestionsFromServer.bind(this);
 	}
+	
 	loadQuestionsFromServer() {
 		fetch(this.props.url)
 			.then(res => res.json())
 			.then(data=>{
-		    	this.setState({ data });
+		    	this.setState({ data },);
 			})
     }
 
@@ -36,8 +37,8 @@ class Quiz extends React.PureComponent{
     }
 
 	render () {
-		if(this.state.data==="" || this.state.data===undefined || this.state.data===null){
-    		return false;
+		if(this.state.data===undefined || this.state.data==='null'|| this.state.data===''){
+    		return false
     	}
 		var shuffledPosts = shuffleArray(this.state.data);
 		return <div>
