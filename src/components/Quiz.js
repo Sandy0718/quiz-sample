@@ -3,7 +3,17 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Question from './Question.js';
 import Options from './Options.js';
-//let data = require('./data.js'); //this imports data from local file, pass it as a prop to Quiz component
+// const data1 = require('./../data.js'); //this imports data from local file, pass it as a prop to Quiz component
+var data1 = 
+[
+	// nn
+	{
+		question: "In which of the following React Component Lifecycle methods, React refs do not work?",
+		options: ["componentWillMount", "componentDidMount ","componentWillUnmount " ,"componentDidUpdate"],
+		key: 1
+	}
+];
+
 
 const shuffleArray = array => {
 	let i = array.length - 1;
@@ -19,21 +29,37 @@ class Quiz extends React.PureComponent{
 	constructor(props, context) {
 	    super(props, context);
 	    this.state = {
-	    	data:""
+			data:"",
+			
 	    }
-		this.loadQuestionsFromServer = this.loadQuestionsFromServer.bind(this);
+		// this.loadQuestionsFromServer = this.loadQuestionsFromServer.bind(this);
+		// this.setState({
+		// 	data:"
+		// 		question: "What is the Javscript compiler name in Google Chrome?",
+		// options: ["Chrome V6", "Chrome V7","Chrome V8","Chrome V9"],
+		// key: 3
+		// 	"
+		// admin:data1,
+		// })
 	}
+
 	
-	loadQuestionsFromServer() {
-		fetch(this.props.url)
-			.then(res => res.json())
-			.then(data=>{
-		    	this.setState({ data },);
-			})
-    }
+	// loadQuestionsFromServer() {
+	// 	fetch(this.props.url)
+	// 		.then(res => res.json())
+	// 		.then(data=>{
+	// 	    	this.setState({ data },);
+	// this.setState({
+	// 	data:data1,
+	// })
+	// 		})
+    //  }
 
 	componentWillMount() {
-		this.loadQuestionsFromServer();
+		// this.loadQuestionsFromServer();
+		this.setState({
+			data:data1,
+		})
     }
 
 	render () {
